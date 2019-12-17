@@ -27,10 +27,17 @@ $(document).ready(function() {
       Math.random() * 1000
     );
 
-
     window.dancers.push(dancer)
 
     $('body').append(dancer.$node);
   });
 });
 
+$('.coordinateDancer').on('click', function(event){
+
+  var danceCoordinatorName = this.attributes.coordinator.value;
+  debugger;
+  var danceCoordinator = window[danceCoordinatorName];
+
+  var dancerShape = new danceCoordinator($(this).text());
+});

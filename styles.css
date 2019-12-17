@@ -33,6 +33,10 @@ body > span {
   /* transition-property: left 2s, top 2s; */
   /* transition-duration: 2s, 2s; */
 }
+
+.dancer:hover{
+  border: 20px solid pink;
+}
 /* .spinnyDancer{
   border: 10px solid rgb(9,121,85, 0);
   background: rgb(34,193,195);

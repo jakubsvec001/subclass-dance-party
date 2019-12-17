@@ -18,19 +18,39 @@
 //   return blinkyDancer;
 // };
 
-var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
-  makeDancer.call(this, top, left, timeBetweenSteps);
-  this.$node.addClass('blinkyDancer');
-};
 
-makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);
-makeBlinkyDancer.prototype.constructor = makeBlinkyDancer;
-makeBlinkyDancer.prototype.oldStep = makeDancer.prototype.step;
+var oldStep = makeDancer.prototype.step
 
-makeBlinkyDancer.prototype.step = function() {
-  this.oldStep.call(this);
-  this.$node.toggle();
-};
+/////////
+
+window.makeBlinkyDancer = class makeBlinkyDancer extends makeDancer {
+  constructor (top, left, timeBetweenSteps) {
+    super(top, left, timeBetweenSteps);
+    this.$node.addClass('blinkyDancer');
+  }
+
+  step(){
+    oldStep.call(this);
+    this.$node.toggle();
+  }
+}
+
+
+/////////
+
+// var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
+//   makeDancer.call(this, top, left, timeBetweenSteps);
+//   this.$node.addClass('blinkyDancer');
+// };
+
+// makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);
+// makeBlinkyDancer.prototype.constructor = makeBlinkyDancer;
+// makeBlinkyDancer.prototype.oldStep = makeDancer.prototype.step;
+
+// makeBlinkyDancer.prototype.step = function() {
+//   this.oldStep.call(this);
+//   this.$node.toggle();
+// };
 
 
 // .effect( "bounce", {times:3}, 300 )

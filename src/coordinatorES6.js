@@ -1,5 +1,4 @@
 var makeCoordinator = function (shape) {
-  debugger;
 
   this.shape = shape;
   this.dancers = window.dancers;
@@ -12,7 +11,6 @@ var makeCoordinator = function (shape) {
     //console.log(lineCalculator(this.dancerCount));
     this.dancers.forEach(function(dancer, index) {
       var left = positionObj.dancerStart + (index * positionObj.spread);
-      debugger;
       dancer.setPosition(positionObj.top, left);
     });
 
@@ -45,7 +43,6 @@ var lineCalculator = function (dancerCount) {
 
   // calculate the x axis
   //var top = window.innerHeight / 3;
-  // debugger;
   // var spread = (window.innerWidth * 0.9) / dancerCount;
 
   // var dancerStart = window.innerWidth * 0.05;

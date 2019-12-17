@@ -36,7 +36,6 @@ $(document).ready(function() {
 $('.coordinateDancer').on('click', function(event){
 
   var danceCoordinatorName = this.attributes.coordinator.value;
-  debugger;
   var danceCoordinator = window[danceCoordinatorName];
 
   var dancerShape = new danceCoordinator($(this).text());
